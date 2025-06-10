@@ -124,6 +124,7 @@
       font-size: 0.9em;
       margin-top: 40px;
     }
+
     .top-button {
       position: fixed;
       bottom: 20px;
@@ -165,11 +166,11 @@
     <main>
       <h2>留下你的問題給豆皮吧！</h2>
       <form action="https://formsubmit.co/candy73230@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://candy73230.github.io/-/index.html">
-  <input type="hidden" name="_captcha" value="false">
+        <!-- 設定寄出後自動回到首頁 -->
+        <input type="hidden" name="_next" value="https://candy73230.github.io/-/index.html">
+        <!-- 關掉機器人驗證 -->
+        <input type="hidden" name="_captcha" value="false">
 
-        <input type="hidden" name="_next" value="index.html" />
-        <input type="hidden" name="_captcha" value="false" />
         <label for="name">怎麼稱呼你</label>
         <input type="text" id="name" name="name" placeholder="貓奴小明" required />
 
@@ -192,4 +193,3 @@
   </div>
 </body>
 </html>
-
