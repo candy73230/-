@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>豆皮提問箱 - 互動照片版</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #FFF8DC, #D2B48C);
+      color: #4B3621;
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #FFF0D9;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #D2B48C;
+      margin-bottom: 20px;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0; margin: 20px 0;
+      list-style: none;
+    }
+    nav ul li {
+      flex: 1 1 30%;
+      max-width: 200px;
+    }
+    nav ul li a {
+      display: block;
+      width: 200px;
+      height: 60px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      font-weight: bold;
+      border-radius: 25px;
+      text-align: center;
+      line-height: 60px;
+      text-decoration: none;
+      border-bottom: 1px dashed;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #9D7553;
+      color: white;
+    }
+    nav ul li a.active {
+      background-color: #9D7553;
+      color: white;
+      border-bottom: none;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #4B3621;
+    }
+    .faq {
+      background-color: #FFF0D9;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(210,180,140,0.4);
+    }
+    .faq-item {
+      margin-bottom: 30px;
+      user-select: none;
+    }
+    .faq-item h3 {
+      margin-bottom: 10px;
+      color: #8B5E3C;
+      cursor: pointer;
+      position: relative;
+      padding-right: 25px;
+    }
+    .faq-item h3::after {
+      content: "🔍";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active h3::after {
+      content: "❌";
+    }
+
+    .faq-image {
+      max-width: 150px;
+      border-radius: 10px;
+      margin: 0 auto 10px auto;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .faq-image.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    .faq-image:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: right;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      padding: 10px 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .top-button:hover {
+      background-color: #9D7553;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <header>
+      <h1>豆皮提問箱 🐾</h1>
+      <p>大家常問的問題都在這裡喵～</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於豆皮</a></li>
+        <li><a href="gallery.html">豆皮的推薦</a></li>
+        <li><a href="quotes.html">豆皮小劇場</a></li>
+        <li><a href="question.html" class="active">豆皮提問箱</a></li>
+        <li><a href="contact.html">聯絡豆皮</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>常見問題 Q&A</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>🐱 豆皮名字由來？</h3>
+          <img class="faq-image" src="IMG_2699 2.jpg" alt="豆皮圖片" />
+          <p>豆皮小時候長得很像達菲熊，取名Duffy，結果家裡的長輩念英文的時候有點台灣國音，Duffy唸起來聽著很像豆皮，後來我想與其糾正發音不如就改名吧！豆皮聽來也怪可愛的，於是她就從達菲熊變成了食物。</p>
+        </div>
+        <div class="faq-item">
+          <h3>💗 豆皮有其他兄弟姊妹嗎？</h3>
+          <img class="faq-image" src="IMG_2698.jpg" alt="豆皮兄弟姊妹圖片" />
+          <p>豆皮是和另外兩隻小虎斑一起被發現的喔，但醫生說年齡都差不多，所以沒有辦法分辨誰大誰小，目前他們兩隻都在新家庭過得幸福喔～</p>
+        </div>
+        
+          <h3>🐾 豆皮的爸爸媽媽是誰？</h3>
+          <p>豆皮被發現的時候只有媽媽在身邊，沒有看到爸爸，愛媽撿到他們後，因為媽媽年紀也大了很難找到主人，所以媽媽結紮後便放回原本的地方，幫孩子們找新家庭。</p>
+      
+          <h3>📬 如果想問更多，可以怎麼聯絡？</h3>
+          <p>你可以前往 <a href="contact.html">聯絡豆皮</a> 留下訊息給我喵～</p>
+        
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 豆皮的世界｜由喵奴-老穆製作</p>
+    </footer>
+
+    <a href="#top" class="top-button">↑ TOP</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-item h3').forEach(title => {
+      title.addEventListener('click', () => {
+        const faqItem = title.parentElement;
+        const img = faqItem.querySelector('.faq-image');
+        if (!img) return;
+
+        // 關閉其他項目
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.classList.remove('active');
+            const otherImg = item.querySelector('.faq-image');
+            if (otherImg) {
+              otherImg.classList.remove('visible');
+              setTimeout(() => {
+                otherImg.style.display = 'none';
+              }, 300);
+            }
+          }
+        });
+
+        const isActive = faqItem.classList.toggle('active');
+        if (isActive) {
+          img.style.display = 'block';
+          setTimeout(() => {
+            img.classList.add('visible');
+          }, 10);
+        } else {
+          img.classList.remove('visible');
+          setTimeout(() => {
+            img.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

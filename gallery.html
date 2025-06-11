@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>豆皮的推薦 - TOP 5 排行榜</title>
+  <style>
+    body {
+      background: url('baba.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #4B3621;
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.15); /* 半透明白底 */
+      border-radius: 15px;
+    }
+    header {
+      background-color: #FFF0D9;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #D2B48C;
+      margin-bottom: 20px;
+      border-radius: 15px;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 20px 0;
+      list-style: none;
+    }
+    nav ul li a {
+      display: block;
+      padding: 10px 20px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      border-bottom: 1px dashed;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #9D7553;
+      color: white;
+      border-bottom: none;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    section.ranking {
+      flex: 1 1 300px;
+      max-width: 350px;
+      background-color: #FFF0D9;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(210,180,140,0.4);
+      text-align: center;
+    }
+    h2 {
+      color: #4B3621;
+      margin-bottom: 5px;
+    }
+    .top5-text {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    ul.rank-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.rank-list li {
+      background-color: #BE9D77;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 12px 15px;
+      font-weight: bold;
+      color: #4D3900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    ul.rank-list li:hover {
+      background-color: #9D7553;
+      color: white;
+      transform: scale(1.05);
+    }
+    ul.rank-list li.active {
+      background-color: #9D7553;
+      color: white;
+      transform: scale(1.1);
+    }
+    ul.rank-list li:nth-child(1)::before {
+      content: "👑";
+      margin-right: 10px;
+      font-size: 1.3em;
+    }
+    ul.rank-list li:nth-child(2)::before {
+      content: "🥈";
+      margin-right: 10px;
+      font-size: 1.3em;
+    }
+    ul.rank-list li:nth-child(3)::before {
+      content: "🥉";
+      margin-right: 10px;
+      font-size: 1.3em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      padding: 10px 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    .top-button:hover {
+      background-color: #9D7553;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <header>
+      <h1>豆皮的推薦 🐾</h1>
+      <p>豆皮最喜歡的食物、睡覺地方和玩具 <br><strong>TOP 5</strong></p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於豆皮</a></li>
+        <li><a href="gallery.html" class="active">豆皮的推薦</a></li>
+        <li><a href="quotes.html">豆皮小劇場</a></li>
+        <li><a href="question.html">豆皮提問箱</a></li>
+        <li><a href="contact.html">聯絡豆皮</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="ranking">
+        <h2>豆皮最愛食物</h2>
+        <p class="top5-text">TOP 5</p>
+        <ul class="rank-list">
+          <li>鮮蝦</li>
+          <li>水煮雞肉</li>
+          <li>玉米</li>
+          <li>吐司（他很愛偷吃）</li>
+          <li>蛋黃</li>
+        </ul>
+      </section>
+
+      <section class="ranking">
+        <h2>豆皮最愛睡覺的地方</h2>
+        <p class="top5-text">TOP 5</p>
+        <ul class="rank-list">
+          <li>客廳的電競椅</li>
+          <li>紙箱裡</li>
+          <li>奶奶的床（奶奶嚴禁）</li>
+          <li>電視後面</li>
+          <li>我的床</li>
+        </ul>
+      </section>
+
+      <section class="ranking">
+        <h2>豆皮最愛玩具</h2>
+        <p class="top5-text">TOP 5</p>
+        <ul class="rank-list">
+          <li>紙團</li>
+          <li>貓抓板</li>
+          <li>蟑螂（這算玩具嗎？）</li>
+          <li>人的手指</li>
+          <li>繩子</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 豆皮的世界｜由喵奴-老穆製作</p>
+    </footer>
+
+    <a href="#top" class="top-button">↑ TOP</a>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.rank-list li');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

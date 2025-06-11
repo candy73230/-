@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>豆皮小劇場 - 劇照輪播版</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #FFF8DC, #D2B48C);
+      color: #4B3621;
+      font-family: "Noto Sans TC", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #FFF0D9;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #D2B48C;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 20px 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      flex: 1 1 30%;
+      max-width: 200px;
+    }
+
+    nav ul li a {
+      display: block;
+      width: 200px;
+      height: 60px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      font-weight: bold;
+      border-radius: 25px;
+      text-align: center;
+      line-height: 60px;
+      text-decoration: none;
+      border-bottom: 1px dashed;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #9D7553;
+      color: white;
+      border-bottom: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #4B3621;
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .faq {
+      background: linear-gradient(145deg, #FFF7EE, #F5E2C8);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 6px 12px rgba(120, 80, 40, 0.2);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq::before {
+      content: "🎭";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 120px;
+      opacity: 0.05;
+      transform: rotate(-30deg);
+    }
+
+    #theater-title {
+      background-color: rgba(255, 240, 217, 0.9);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      font-size: 1.2em;
+      border: 2px dashed #BE9D77;
+      transition: all 0.3s ease;
+    }
+
+    .faq-image {
+      max-width: 100%;
+      width: 420px;
+      height: auto;
+      border-radius: 25px;
+      box-shadow: 0 8px 16px rgba(100, 60, 20, 0.2);
+      transition: transform 0.4s ease, opacity 0.5s ease;
+    }
+
+    .faq-image.visible {
+      opacity: 1;
+    }
+
+    .faq-image:hover {
+      transform: scale(1.06) rotate(-1deg);
+      cursor: pointer;
+    }
+
+    .nav-button {
+      background-color: #BE9D77;
+      color: #fff8f0;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      margin: 15px 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #9D7553;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: right;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #BE9D77;
+      color: #4D3900;
+      padding: 10px 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .top-button:hover {
+      background-color: #9D7553;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="top">
+    <header>
+      <h1>豆皮小劇場 🎬</h1>
+      <p>捕捉豆皮日常，看看她的內心戲喵～</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於豆皮</a></li>
+        <li><a href="gallery.html">豆皮的推薦</a></li>
+        <li><a href="quotes.html" class="active">豆皮小劇場</a></li>
+        <li><a href="question.html">豆皮提問箱</a></li>
+        <li><a href="contact.html">聯絡豆皮</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>🎬 豆皮的內心戲</h2>
+      <div class="faq">
+        <div class="faq-item" id="theater">
+          <img class="faq-image visible" id="theater-img" src="IMG_2706.jpg" alt="豆皮劇照" />
+          <h3 id="theater-title">《感謝老天爺》——媽！我出運了啊！</h3>
+          <div style="margin-top: 20px;">
+            <button onclick="prevScene()" class="nav-button">⬅ 上一則</button>
+            <button onclick="nextScene()" class="nav-button">下一則 ➡</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 豆皮的世界｜由喵奴-老穆製作</p>
+    </footer>
+    <a href="#top" class="top-button">↑ TOP</a>
+  </div>
+
+  <script>
+    const scenes = [
+      { img: "IMG_2706.jpg", title: "《感謝老天爺》——媽！我出運了啊！" },
+      { img: "IMG_2708.jpg", title: "《我要減肥嗎》——還是明天再減好了..." },
+      { img: "IMG_2714.jpg", title: "《怎麼還不開飯》——我已經在等很久了喵" },
+      { img: "IMG_2712.jpg", title: "《你話怎麼那麼多》——我快睡著了..." },
+      { img: "IMG_2710.jpg", title: "《我不要上班啊》——身為打工人的悲哀啊～" }
+    ];
+    let currentScene = 0;
+
+    function updateScene(index) {
+      const imgEl = document.getElementById("theater-img");
+      const titleEl = document.getElementById("theater-title");
+      imgEl.classList.remove("visible");
+      setTimeout(() => {
+        imgEl.src = scenes[index].img;
+        titleEl.textContent = scenes[index].title;
+        imgEl.classList.add("visible");
+      }, 200);
+    }
+
+    function nextScene() {
+      currentScene = (currentScene + 1) % scenes.length;
+      updateScene(currentScene);
+    }
+
+    function prevScene() {
+      currentScene = (currentScene - 1 + scenes.length) % scenes.length;
+      updateScene(currentScene);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
